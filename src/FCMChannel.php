@@ -45,7 +45,7 @@ class FCMChannel
         $message = $notification->toFCM($notifiable);
         if ($message->recipientNotGiven()) {
             $to = $notifiable->routeNotificationFor('FCM');
-            if (is_array($to) && empty($to)) {
+            if (empty($to)) {
                 return;
             }
             if (! $to) {
